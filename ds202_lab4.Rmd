@@ -1,0 +1,21 @@
+---
+title: 'DS202: Lab 4'
+author: "Muhammad Khairi Norizan"
+date: "10/26/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(readxl)
+defense <- read_excel('./cyclonesFootball2020.xlsx', sheet='Defensive')
+offense <- read_excel('./cyclonesFootball2020.xlsx', sheet='Offensive')
+biography <- read_excel('./cyclonesFootball2020.xlsx', sheet='Biography')
+```
+
+## Part 1: Cleaning Data
+
+1. The player names and opponent names should be factors.
+2. All offensive and defensive statistics should be numerical. The `Weight` column in biography should also be numberic. (Optional: Read `?across` and learn to mutate multiple columns simultaneously using the `across` function in `dplyr`)
+3. The `Height` column in `biography` should be numeric. (Hint: Use a unit that works well)
+4. Add a column to both `defense` and `offense` indicating whether it is the first or the second game versus an opponent. We had a single game versus each opponent except for Oklahoma, which we played against twice. (Hint: You can use `group_by()`, `mutate()`, and `row_number()`)
+
